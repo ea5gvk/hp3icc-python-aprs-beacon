@@ -21,14 +21,14 @@ Type=simple
 Restart=always
 RestartSec=3
 StandardOutput=null
-ExecStart=/usr/bin/python3 /opt/python-aprs-aprs/bcom1.py
+ExecStart=/usr/bin/python3 /opt/python-aprs/bcom1.py
 
 [Install]
 WantedBy=multi-user.target
 
 EOF
 #
-sudo cat > /opt/python-aprs-aprs/bcom1.py <<- "EOF"
+sudo cat > /opt/python-aprs/bcom1.py <<- "EOF"
 import socket
 import time
 
@@ -74,9 +74,9 @@ cp /lib/systemd/system/py-aprsb1.service /lib/systemd/system/py-aprsb2.service
 cp /lib/systemd/system/py-aprsb1.service /lib/systemd/system/py-aprsb3.service
 cp /lib/systemd/system/py-aprsb1.service /lib/systemd/system/py-aprsb4.service
 
-cp /opt/python-aprs-aprs/bcom1.py /opt/python-aprs-aprs/bcom2.py
-cp /opt/python-aprs-aprs/bcom1.py /opt/python-aprs-aprs/bcom3.py
-cp /opt/python-aprs-aprs/bcom1.py /opt/python-aprs-aprs/bcom4.py
+cp /opt/python-aprs/bcom1.py /opt/python-aprs/bcom2.py
+cp /opt/python-aprs/bcom1.py /opt/python-aprs/bcom3.py
+cp /opt/python-aprs/bcom1.py /opt/python-aprs/bcom4.py
 
 sudo sed -i "s/BEACOM1/BEACOM2/g"  /lib/systemd/system/py-aprsb2.service
 sudo sed -i "s/BEACOM1/BEACOM3/g"  /lib/systemd/system/py-aprsb3.service
@@ -86,10 +86,10 @@ sudo sed -i "s/bcom1/bcom2/g"  /lib/systemd/system/py-aprsb2.service
 sudo sed -i "s/bcom1/bcom3/g"  /lib/systemd/system/py-aprsb3.service
 sudo sed -i "s/bcom1/bcom4/g"  /lib/systemd/system/py-aprsb4.service
 
-sudo sed -i "s/Python APRS BEACON-1/Python APRS BEACON-1/g"   /opt/python-aprs-aprs/bcom1.py
-sudo sed -i "s/Python APRS BEACON-1/Python APRS BEACON-2/g"   /opt/python-aprs-aprs/bcom2.py
-sudo sed -i "s/Python APRS BEACON-1/Python APRS BEACON-3/g"   /opt/python-aprs-aprs/bcom3.py
-sudo sed -i "s/Python APRS BEACON-1/Python APRS BEACON-4/g"   /opt/python-aprs-aprs/bcom4.py
+sudo sed -i "s/Python APRS BEACON-1/Python APRS BEACON-1/g"   /opt/python-aprs/bcom1.py
+sudo sed -i "s/Python APRS BEACON-1/Python APRS BEACON-2/g"   /opt/python-aprs/bcom2.py
+sudo sed -i "s/Python APRS BEACON-1/Python APRS BEACON-3/g"   /opt/python-aprs/bcom3.py
+sudo sed -i "s/Python APRS BEACON-1/Python APRS BEACON-4/g"   /opt/python-aprs/bcom4.py
 
 systemctl daemon-reload
 sudo chmod +x /opt/python-aprs/*
