@@ -3,6 +3,13 @@ sudo apt update
 sudo apt install python3 python3-pip -y
 sudo pip install aprslib
 
+if [ -d "/opt/python-aprs" ]
+then
+   rm -r /opt/python-aprs
+fi
+   mkdir /opt/python-aprs
+
+
 sudo cat > /lib/systemd/system/py-aprsb1.service <<- "EOF"
 [Unit]
 Description=Python APRS BEACOM1
