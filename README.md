@@ -1,6 +1,6 @@
 # Python APRS Beacon
 
-<img src="https://gitlab.com/hp3icc/python-aprs-beacon/-/raw/main/python-aprs.jpg" width="350" height="380">
+<img src="https://gitlab.com/hp3icc/python-aprs-beacon/-/raw/main/python-aprs.jpg" width="400" height="380">
 
 
 # Install
