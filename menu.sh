@@ -6,15 +6,13 @@ choix=$(whiptail --title "Raspbian Proyect HP3ICC Menu Python-APRS" --menu "Suba
 2 " Editar Beacon-2 " \
 3 " Editar Beacon-3 " \
 4 " Editar Beacon-4 " \
-5 " Start/Restart Beacon-1 " \
-6 " Start/Restart Beacon-2  " \
-7 " Start/Restart Beacon-3 " \
-8 " Start/Restart Beacon-4 " \
-9 " Stop Beacon-1  " \
-10 " Stop Beacon-2   " \
-11 " Stop Beacon-3 " \
-12 " Stop Beacon-4 " \
-13 " Menu Principal " 3>&1 1>&2 2>&3)
+5 " Editar Beacon-5 " \
+6 " Editar Beacon-6 " \
+7 " Editar Beacon-7 " \
+8 " Editar Beacon-8 " \
+9 " Start & Restart Beacon " \
+10 " Stop Beacon " \
+11 " Menu Principal " 3>&1 1>&2 2>&3)
 exitstatus=$?
 #on recupere ce choix
 #exitstatus=$?
@@ -34,26 +32,61 @@ sudo nano /opt/python-aprs/bcom3.py ;;
 4)
 sudo nano /opt/python-aprs/bcom4.py ;;
 5)
-sudo systemctl stop py-aprsb1.service && sudo systemctl start py-aprsb1.service &&  sudo systemctl enable py-aprsb1.service ;;
+sudo nano /opt/python-aprs/bcom5.py ;;
 6)
-sudo systemctl stop py-aprsb2.service && sudo systemctl start py-aprsb2.service &&  sudo systemctl enable py-aprsb2.service ;;
+sudo nano /opt/python-aprs/bcom6.py ;;
 7)
-sudo systemctl stop py-aprsb3.service && sudo systemctl start py-aprsb3.service &&  sudo systemctl enable py-aprsb3.service ;;
+sudo nano /opt/python-aprs/bcom7.py ;;
 8)
-sudo systemctl stop py-aprsb4.service && sudo systemctl start py-aprsb4.service &&  sudo systemctl enable py-aprsb4.service ;;
+sudo nano /opt/python-aprs/bcom8.py ;;
 9)
-sudo systemctl stop py-aprsb1.service &&  sudo systemctl disable py-aprsb1.service ;;
+            choix_servicio=$(whiptail --title "Iniciar Beacon" --menu "Seleccione el Beacon a iniciar:" 15 40 8 \
+            1 "Beacon" 1" \
+            2 "Beacon" 2" \
+            3 "Beacon" 3" \
+            4 "Beacon" 4" \
+            5 "Beacon" 5" \
+            6 "Beacon" 6" \
+            7 "Beacon" 7" \
+            8 "Beacon" 8" \
+             3>&1 1>&2 2>&3)
+            exitstatus_servicio=$?
+
+            if [ $exitstatus_servicio = 0 ]; then
+                echo "Iniciar servicio: $choix_servicio"
+                # Agrega aquiÂ­ la logica para iniciar el servicio correspondiente (usando el valor de $choix_servicio)
+               sudo systemctl stop py-aprsb$choix_servicio.service && sudo systemctl start py-aprsb$choix_servicio.service &&  sudo systemctl enable py-aprsb$choix_servicio.service
+            else
+                echo "Volver al menu principal."
+            fi
+            ;;
 10)
-sudo systemctl stop py-aprsb2.service &&  sudo systemctl disable py-aprsb2.service ;;
+            choix_servicio=$(whiptail --title "Detener Beacom" --menu "Seleccione el Beacon a detener:" 15 40 8 \
+            1 "Beacon" 1" \
+            2 "Beacon" 2" \
+            3 "Beacon" 3" \
+            4 "Beacon" 4" \
+            5 "Beacon" 5" \
+            6 "Beacon" 6" \
+            7 "Beacon" 7" \
+            8 "Beacon" 8" \
+             3>&1 1>&2 2>&3)
+            exitstatus_servicio=$?
+
+            if [ $exitstatus_servicio = 0 ]; then
+                echo "Detener servicio: $choix_servicio"
+                # Agrega aqui la logica para iniciar el servicio correspondiente (usando el valor de $choix_servicio)
+               sudo systemctl stop py-aprsb$choix_servicio.service &&  sudo systemctl disable py-aprsb$choix_servicio.service
+            else
+                echo "Volver al menu principal."
+            fi
+            ;;
 11)
-sudo systemctl stop py-aprsb3.service &&  sudo systemctl disable py-aprsb3.service ;;
-12)
-sudo systemctl stop py-aprsb4.service &&  sudo systemctl disable py-aprsb4.service ;;
-13)
 break;
 esac
 done
 exit 0
+
 EOF
 ######
 chmod +x /bin/menu*
