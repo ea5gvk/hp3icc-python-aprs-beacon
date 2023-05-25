@@ -26,13 +26,13 @@ fi
 # case : action en fonction du choix
 case $choix in
 1)
-sudo nano /opt/python-aprs-aprs/bcom1.py ;;
+sudo nano /opt/python-aprs/bcom1.py ;;
 2)
-sudo nano /opt/python-aprs-aprs/bcom2.py ;;
+sudo nano /opt/python-aprs/bcom2.py ;;
 3)
-sudo nano /opt/python-aprs-aprs/bcom3.py ;;
+sudo nano /opt/python-aprs/bcom3.py ;;
 4)
-sudo nano /opt/python-aprs-aprs/bcom4.py ;;
+sudo nano /opt/python-aprs/bcom4.py ;;
 5)
 sudo systemctl stop py-aprsb1.service && sudo systemctl start py-aprsb1.service &&  sudo systemctl enable py-aprsb1.service ;;
 6)
