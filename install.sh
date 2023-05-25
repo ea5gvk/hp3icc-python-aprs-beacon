@@ -1,7 +1,7 @@
 #!/bin/bash
 sudo apt update
-sudo apt install python3 python3-pip -y
-sudo pip install aprslib
+sudo apt install python3 -y
+
 
 if [ -d "/opt/python-aprs" ]
 then
