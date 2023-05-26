@@ -112,4 +112,4 @@ sudo sed -i "s/Python APRS BEACON-1/Python APRS BEACON-7/g"   /opt/python-aprs/b
 sudo sed -i "s/Python APRS BEACON-1/Python APRS BEACON-8/g"   /opt/python-aprs/bcom8.py
 
 systemctl daemon-reload
-sudo chmod +x /opt/python-aprs/*
+chmod +x /opt/python-aprs/*
