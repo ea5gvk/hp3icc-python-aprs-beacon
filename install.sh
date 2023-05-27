@@ -13,18 +13,18 @@ fi
 sudo cat > /lib/systemd/system/py-aprsb1.service <<- "EOF"
 [Unit]
 Description=Python APRS BEACOM1
-After=syslog.target network.target
+After=network.target
 
 [Service]
-User=root
-Type=simple
-Restart=always
-RestartSec=3
-StandardOutput=null
 ExecStart=/usr/bin/python3 /opt/python-aprs/bcom1.py
+WorkingDirectory=/opt/python-aprs/
+Restart=on-failure
+RestartSec=3
 
 [Install]
 WantedBy=multi-user.target
+
+
 
 EOF
 #
