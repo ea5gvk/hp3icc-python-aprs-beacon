@@ -16,6 +16,7 @@ Description=Python APRS BEACOM1
 After=network.target
 
 [Service]
+ExecStartPre=/bin/sleep 30
 ExecStart=/usr/bin/python3 /opt/python-aprs/bcom1.py
 WorkingDirectory=/opt/python-aprs/
 Restart=on-failure
@@ -110,6 +111,15 @@ sudo sed -i "s/Python APRS BEACON-1/Python APRS BEACON-5/g"   /opt/python-aprs/b
 sudo sed -i "s/Python APRS BEACON-1/Python APRS BEACON-6/g"   /opt/python-aprs/bcom6.py
 sudo sed -i "s/Python APRS BEACON-1/Python APRS BEACON-7/g"   /opt/python-aprs/bcom7.py
 sudo sed -i "s/Python APRS BEACON-1/Python APRS BEACON-8/g"   /opt/python-aprs/bcom8.py
+
+sudo chmod 644 /lib/systemd/system/py-aprsb1.service
+sudo chmod 644 /lib/systemd/system/py-aprsb2.service
+sudo chmod 644 /lib/systemd/system/py-aprsb3.service
+sudo chmod 644 /lib/systemd/system/py-aprsb4.service
+sudo chmod 644 /lib/systemd/system/py-aprsb5.service
+sudo chmod 644 /lib/systemd/system/py-aprsb6.service
+sudo chmod 644 /lib/systemd/system/py-aprsb7.service
+sudo chmod 644 /lib/systemd/system/py-aprsb8.service
 
 systemctl daemon-reload
 chmod +x /opt/python-aprs/*
