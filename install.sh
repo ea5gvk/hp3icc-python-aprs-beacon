@@ -16,7 +16,6 @@ Description=Python APRS BEACOM1
 After=network.target
 
 [Service]
-ExecStartPre=/bin/sleep 30
 ExecStart=/usr/bin/python3 /opt/python-aprs/bcom1.py
 WorkingDirectory=/opt/python-aprs/
 Restart=on-failure
@@ -57,6 +56,7 @@ packet2 = f"{address}>{text}"
 print(packet)
 print(len(comment))
 
+time.sleep(30)
 while True:
     try:
         sock = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
