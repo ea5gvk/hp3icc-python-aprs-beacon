@@ -39,9 +39,9 @@ longitude = "08021.59W"    # DDDMM.mmW (08021.59W)
 comment = "Python APRS BEACON-1"  # coment beacon
 simbol_primary = "/"       # simbol id
 simbol_secundary = "r"     # simbol code
-serverHost = "soam.aprs2.net" # aprs server url
+serverHost = "rotate.aprs2.net" # aprs server url
 serverPort = 14580            # aprs server port
-every = 30                    # time minute every send beacon
+every = 20                    # time minute every send beacon
 
 
 
