@@ -50,7 +50,7 @@ every = 20                    # time minute every send beacon
 ##############################################################################
 address = f"{callsign}>APHP03,TCPIP:"
 login = f"user {callsign} pass {password} vers emq-TE1 Python APRS Beacon 1.3"
-text = "emq-TE1 Python APRS Beacon"
+text = "Python APRS Beacon by HP3ICC"
 packet = f"{address}!{latitude}{simbol_primary}{longitude}{simbol_secundary}{comment}"
 packet2 = f"{address}>{text}"
 print(packet)
