@@ -41,14 +41,14 @@ sudo nano /opt/python-aprs/bcom7.py ;;
 sudo nano /opt/python-aprs/bcom8.py ;;
 9)
             choix_servicio=$(whiptail --title "Iniciar Beacon" --menu "Seleccione el Beacon a iniciar:" 15 40 8 \
-            1 "Servicio 1" \
-            2 "Servicio 2" \
-            3 "Servicio 3" \
-            4 "Servicio 4" \
-            5 "Servicio 5" \
-            6 "Servicio 6" \
-            7 "Servicio 7" \
-            8 "Servicio 8" \
+            1 "APRS Beacon-1" \
+            2 "APRS Beacon-2" \
+            3 "APRS Beacon-3" \
+            4 "APRS Beacon-4" \
+            5 "APRS Beacon-5" \
+            6 "APRS Beacon-6" \
+            7 "APRS Beacon-7" \
+            8 "APRS Beacon-8" \
              3>&1 1>&2 2>&3)
             exitstatus_servicio=$?
 
@@ -62,14 +62,14 @@ sudo nano /opt/python-aprs/bcom8.py ;;
             ;;
 10)
             choix_servicio=$(whiptail --title "Detener Beacom" --menu "Seleccione el Beacon a detener:" 15 40 8 \
-            1 "Servicio 1" \
-            2 "Servicio 2" \
-            3 "Servicio 3" \
-            4 "Servicio 4" \
-            5 "Servicio 5" \
-            6 "Servicio 6" \
-            7 "Servicio 7" \
-            8 "Servicio 8" \
+            1 "APRS Beacon-1" \
+            2 "APRS Beacon-2" \
+            3 "APRS Beacon-3" \
+            4 "APRS Beacon-4" \
+            5 "APRS Beacon-5" \
+            6 "APRS Beacon-6" \
+            7 "APRS Beacon-7" \
+            8 "APRS Beacon-8" \
              3>&1 1>&2 2>&3)
             exitstatus_servicio=$?
 
