@@ -32,10 +32,10 @@ sudo cat > /opt/python-aprs/bcom1.py <<- "EOF"
 import socket
 import time
 
-callsign = "HP3ICC-10"     # Callsign
-password = "12345"         # aprspasscode
-latitude = "0831.27N"      # DDMM.mmN   (0831.27N)
-longitude = "08021.59W"    # DDDMM.mmW (08021.59W)
+callsign = "HP0XX-10"     # Callsign
+password = "12345"           # aprspasscode (12345)
+latitude = "0831.27N"        # DDMM.mmN   (0831.27N)
+longitude = "08021.59W"      # DDDMM.mmW (08021.59W)
 comment = "Python APRS BEACON-1"  # coment beacon
 simbol_primary = "/"       # simbol id
 simbol_secundary = "r"     # simbol code
@@ -56,7 +56,6 @@ packet2 = f"{address}>{text}"
 print(packet)
 print(len(comment))
 
-time.sleep(30)
 while True:
     try:
         sock = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
