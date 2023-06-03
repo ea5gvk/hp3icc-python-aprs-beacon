@@ -1,5 +1,10 @@
 sudo cat > /bin/menu-py-aprs <<- "EOF"
 #!/bin/bash
+if [[ $EUID -ne 0 ]]; then
+        whiptail --title "sudo su" --msgbox "requiere ser usuario root , escriba (sudo su) antes de entrar a menu / requires root user, type (sudo su) before entering menu" 0 50
+        exit 0
+fi
+
 while : ; do
 choix=$(whiptail --title "Raspbian Proyect HP3ICC Menu Python-APRS" --menu "Suba o Baje con las flechas del teclado y seleccione el numero de opcion:" 23 56 13 \
 1 " Editar Beacon-1 " \
