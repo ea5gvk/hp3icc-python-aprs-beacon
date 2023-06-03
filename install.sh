@@ -1,6 +1,18 @@
 #!/bin/bash
-sudo apt install python3 -y
 
+apps=("python3")
+
+for app in "${apps[@]}"
+do
+    # Verificar apps
+    if ! dpkg -s "$app" >/dev/null 2>&1; then
+        # app no instalada
+        sudo apt-get install -y "$app"
+    else
+        # app ya instalada
+        echo "$app ya instalada"
+    fi
+done
 
 if [ -d "/opt/python-aprs" ]
 then
