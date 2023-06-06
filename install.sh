@@ -25,7 +25,7 @@ fi
    mkdir /opt/python-aprs
 
 
-sudo cat > /lib/systemd/system/py-aprsb1.service <<- "EOF"
+cat > /lib/systemd/system/py-aprsb1.service <<- "EOF"
 [Unit]
 Description=Python APRS BEACOM1
 After=network.target
@@ -42,7 +42,7 @@ WantedBy=multi-user.target
 
 EOF
 #
-sudo cat > /opt/python-aprs/bcom1.py <<- "EOF"
+cat > /opt/python-aprs/bcom1.py <<- "EOF"
 import socket
 import time
 
