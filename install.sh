@@ -3,9 +3,7 @@ if [[ $EUID -ne 0 ]]; then
 	whiptail --title "Python APRS Beacon" --msgbox "Debe ejecutar este script como usuario ROOT" 0 50
 	exit 0
 fi
-
-apps=("python3")
-
+apps=("python3" "sed")
 for app in "${apps[@]}"
 do
     # Verificar apps
@@ -17,7 +15,6 @@ do
         echo "$app ya instalada"
     fi
 done
-
 if [ -d "/opt/python-aprs" ]
 then
    rm -r /opt/python-aprs
@@ -25,7 +22,7 @@ fi
    mkdir /opt/python-aprs
 
 
-cat > /lib/systemd/system/py-aprsb1.service <<- "EOF"
+sudo cat > /lib/systemd/system/py-aprsb1.service <<- "EOF"
 [Unit]
 Description=Python APRS BEACOM1
 After=network.target
@@ -42,7 +39,7 @@ WantedBy=multi-user.target
 
 EOF
 #
-cat > /opt/python-aprs/bcom1.py <<- "EOF"
+sudo cat > /opt/python-aprs/bcom1.py <<- "EOF"
 import socket
 import time
 
