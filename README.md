@@ -6,6 +6,10 @@
 # Install
    
 ```
- sh -c "$(curl -fsSL https://gitlab.com/hp3icc/python-aprs-beacon/-/raw/main/install-py-aprs.sh)"
+ apt update 
+
+ apt-get install curl sudo -y
+ 
+ bash -c "$(curl -fsSL https://gitlab.com/hp3icc/python-aprs-beacon/-/raw/main/install-py-aprs.sh)"
 
 ```
