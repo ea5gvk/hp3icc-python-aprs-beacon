@@ -34,7 +34,6 @@ After=network.target
 ExecStart=/usr/bin/python3 /opt/python-aprs/bcom1.py
 WorkingDirectory=/opt/python-aprs/
 Restart=on-failure
-RestartSec=3
 
 [Install]
 WantedBy=multi-user.target
