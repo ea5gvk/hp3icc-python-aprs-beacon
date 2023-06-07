@@ -52,6 +52,7 @@ password = "12345"           # aprspasscode (12345)
 latitude = "0831.27N"        # DDMM.mmN   (0831.27N)
 longitude = "08021.59W"      # DDDMM.mmW (08021.59W)
 comment = "Python APRS BEACON-1"  # coment beacon
+text = "Python APRS Beacon by HP3ICC" # state beacon
 simbol_primary = "/"       # simbol id
 simbol_secundary = "r"     # simbol code
 serverHost = "rotate.aprs2.net" # aprs server url
@@ -65,7 +66,6 @@ every = 20                    # time minute every send beacon
 ##############################################################################
 address = f"{callsign}>APHPIB,TCPIP:"
 login = f"user {callsign} pass {password} vers emq-TE1 Python APRS Beacon 1.3"
-text = "Python APRS Beacon by HP3ICC"
 packet = f"{address}!{latitude}{simbol_primary}{longitude}{simbol_secundary}{comment}"
 packet2 = f"{address}>{text}"
 print(packet)
