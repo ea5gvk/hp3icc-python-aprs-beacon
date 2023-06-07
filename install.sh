@@ -4,14 +4,14 @@ if [[ $EUID -ne 0 ]]; then
 fi
 #!/bin/bash
 
-apps=("git" "sudo" "curl" "wget" "sed")
+apps=("python3" "sudo" "curl" "sed")
 
 for app in "${apps[@]}"
 do
     # Verificar la instalación de las aplicaciones
     if ! dpkg -s "$app" >/dev/null 2>&1; then
         # Aplicación no instalada
-        sudo apt-get install -y "$app"
+        apt-get install -y "$app"
     else
         # Aplicación ya instalada
         echo "$app ya está instalada"
