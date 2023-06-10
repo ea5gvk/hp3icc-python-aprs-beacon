@@ -62,7 +62,6 @@ every = 20                    # time minute every send beacon
 
 
 
-
 ##############################################################################
 address = f"{callsign}>APHPIB,TCPIP:"
 login = f"user {callsign} pass {password} vers emq-TE1 Python APRS Beacon 1.3"
@@ -83,6 +82,7 @@ while True:
         print(f"Error al enviar el paquete: {e}")
 
     time.sleep(every * 60)
+
 
 EOFB
 cp /lib/systemd/system/py-aprsb1.service /lib/systemd/system/py-aprsb2.service
