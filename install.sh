@@ -49,8 +49,8 @@ import time
 
 callsign = "HP0XX-10"     # Callsign
 password = "12345"           # aprspasscode (12345)
-latitude = "0831.27N"        # DDMM.mmN   (0831.27N)
-longitude = "08021.59W"      # DDDMM.mmW (08021.59W)
+latitude = "08.31.27N"        # DDMM.mmN   (08.31.27N)
+longitude = "080.21.59W"      # DDDMM.mmW (080.21.59W)
 comment = "Python APRS BEACON-1"  # coment beacon
 text = "Python APRS Beacon by HP3ICC" # state beacon
 simbol_primary = "/"       # simbol id
@@ -65,7 +65,9 @@ every = 20                    # time minute every send beacon
 ##############################################################################
 address = f"{callsign}>APHPIB,TCPIP:"
 login = f"user {callsign} pass {password} vers emq-TE1 Python APRS Beacon 1.3"
-packet = f"{address}!{latitude}{simbol_primary}{longitude}{simbol_secundary}{comment}"
+latg = latitude.replace(".", "", 1)
+long = longitude.replace(".", "", 1)
+packet = f"{address}!{latg}{simbol_primary}{long}{simbol_secundary}{comment}"
 packet2 = f"{address}>{text}"
 print(packet)
 print(len(comment))
@@ -82,6 +84,7 @@ while True:
         print(f"Error al enviar el paquete: {e}")
 
     time.sleep(every * 60)
+
 
 
 EOFB
