@@ -20,7 +20,20 @@ Python APRS Beacon , esta creado para ser utilizado en cualquier dispositivo con
 ```
 # Configuración 
 
-Desde de su consola terminal o ssh , escriba : menu-py-aprs , y  seleccione el número de Beacon que desea habilitar, coloque su indicativo , aprspasscode y coordenadas , Python APRS Beacon permite publicar comentario beacon y estado beacon, también puede colocar aprs simbol de su preferencia . 
+Desde de su consola terminal o ssh , escriba : menu-py-aprs , y  seleccione el número de Beacon que desea habilitar, coloque su indicativo , aprspasscode y coordenadas , Python APRS Beacon permite publicar comentario beacon y estado beacon, también puede colocar aprs simbol de su preferencia .
+
+# Coordenadas 
+
+El formato de coordenadas es grados minutos segundos si requiere convertir sus coordenadas de formato decimal a grados minutos segundos puede utilizar el siguiente link : 
+
+https://sig.rocha.gub.uy/sig/coordenadas/
+
+complete con cero a la izquierda , para para que coincida coordenadas con formato , ejemplo:
+
+ 8.5.3N  =  08.05.03N
+
+ 80.3.5W  =  080.03.05W
+
 
 # Iniciar beacon 
 
