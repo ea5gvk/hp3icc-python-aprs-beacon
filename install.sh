@@ -49,8 +49,8 @@ import time
 
 callsign = "HP0XX-10"     # Callsign
 password = "12345"           # aprspasscode (12345)
-latitude = "08.31.27N"        # DDMM.mmN   (08.31.27N)
-longitude = "080.21.59W"      # DDDMM.mmW (080.21.59W)
+latitude = "08.31.27N"        # DD.MM.mmN   (08.31.27N)
+longitude = "080.21.59W"      # DDD.MM.mmW (080.21.59W)
 comment = "Python APRS BEACON-1"  # coment beacon
 text = "Python APRS Beacon by HP3ICC" # state beacon
 simbol_primary = "/"       # simbol id
