@@ -48,6 +48,21 @@ Ejemplo:
 
 #
 
+# Ubicación de archivos 
+
+/opt/python-aprs/bcom1.py
+
+Cada beacon tiene su propio archivo y se diferencia numéricamente del 1 al 8 , en caso que su sistema operativo no sea compatible con servicios systemd, puede agregar a crontab para que se inicien automáticamente cuando inicie su equipo.
+
+Ejemplo : 
+
+@reboot /opt/python-aprs/bcom1.py
+
+@reboot /opt/python-aprs/bcom2.py
+
+
+#
+
 Python APRS Beacon , es un aporte para todos los colegas radio aficionados interezados en compartir su ubicación de estacion , sistemas y actividades en la red de aprs , sientace libre de utilizar sin ningún tipo de coste , o donación .
 
 Éxitos en sus proyectos 
