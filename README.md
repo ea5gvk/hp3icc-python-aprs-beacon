@@ -56,9 +56,9 @@ Cada beacon tiene su propio archivo y se diferencia numéricamente del 1 al 8 , 
 
 Ejemplo : 
 
-@reboot /opt/python-aprs/bcom1.py
+@reboot python3 /opt/python-aprs/bcom1.py
 
-@reboot /opt/python-aprs/bcom2.py
+@reboot python3 /opt/python-aprs/bcom2.py
 
 
 #
